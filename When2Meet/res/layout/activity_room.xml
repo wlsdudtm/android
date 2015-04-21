@@ -3,23 +3,50 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/setting"
+        android:id="@+id/setting1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
         android:text="@string/hello_world" />
 
-    <GridView
-        android:id="@+id/grid"
+    <TextView
+        android:id="@+id/setting2"
+        android:layout_weight="0.5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:horizontalSpacing="5dp"
-        android:numColumns="1"
-        android:stretchMode="none"
-        android:verticalSpacing="5dp" />
+        android:layout_height="0dp"
+        android:text="@string/hello_world" />
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:scrollbars="vertical" >
 
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:fadeScrollbars="false" >
+
+            <TableLayout
+                android:id="@+id/table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp" >
+            </TableLayout>
+            
+        </HorizontalScrollView>
+        
+    </ScrollView>
+	<Button 
+	    android:id="@+id/vote"
+	    android:layout_weight="1"
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:text="내 스케줄 등록"
+	    />
 </LinearLayout>
